@@ -1,0 +1,35 @@
+[project]
+name = "audio-robust-bench"
+version = "2.0.0"
+description = "Unified reliability benchmark for ASR, speaker cloning, and sound event detection."
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26,<3"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "audio_robust_bench", from = "src" }]
+
+[project.scripts]
+audio-robust-bench = "audio_robust_bench.cli:entrypoint"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+ruff = "*"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

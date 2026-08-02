@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-08-02T18:54:55.456105+00:00",
+  "status": "passed",
+  "measurement_scope": {
+    "asr": "reference-based task quality",
+    "speaker_consistency": "clean-embedding anchor; not cloning naturalness",
+    "event_consistency": "clean top-5 pseudo-label anchor; not ground-truth accuracy"
+  },
+  "models": {
+    "asr": "Systran/faster-whisper-tiny.en",
+    "speaker": "microsoft/wavlm-base-plus-sv",
+    "event": "MIT/ast-finetuned-audioset-10-10-0.4593"
+  },
+  "input": {
+    "path": "data/public/jfk.wav",
+    "sha256": "59dfb9a4acb36fe2a2affc14bacbee2920ff435cb13cc314a08c13f66ba7860e"
+  },
+  "cuda": {
+    "torch": "2.9.0+cu128",
+    "runtime": "12.8",
+    "device": "NVIDIA GeForce RTX 4090"
+  },
+  "git_commit": null,
+  "transcripts": {
+    "jfk-snr-clean": "And so my fellow Americans ask not what your country can do for you ask what you can do for your country",
+    "jfk-snr-10": "And so my fellow American Ask not what your country can do for you Ask what you can do for your country",
+    "jfk-snr-0": "And so my fellow American F-not, what your country can do for you, F-but you can do for your country."
+  },
+  "event_labels": {
+    "jfk-snr-clean": [
+      "Conversation",
+      "Male speech, man speaking",
+      "Narration, monologue",
+      "Speech",
+      "Speech synthesizer"
+    ],
+    "jfk-snr-10": [
+      "Noise",
+      "Pink noise",
+      "Speech",
+      "Static",
+      "White noise"
+    ],
+    "jfk-snr-0": [
+      "Noise",
+      "Pink noise",
+      "Speech",
+      "Static",
+      "White noise"
+    ]
+  },
+  "reports": {
+    "asr": {
+      "examples": 3,
+      "mean_score": 0.9397590361445783,
+      "failure_rate": 0.0,
+      "ece": 0.06024096385542166,
+      "by_corruption": {
+        "snr_db": {
+          "0.0": {
+            "examples": 1,
+            "mean_score": 0.8554216867469879,
+            "failure_rate": 0.0
+          },
+          "10.0": {
+            "examples": 1,
+            "mean_score": 0.963855421686747,
+            "failure_rate": 0.0
+          },
+          "100.0": {
+            "examples": 1,
+            "mean_score": 1.0,
+            "failure_rate": 0.0
+          }
+        }
+      }
+    },
+    "speaker_consistency": {
+      "examples": 3,
+      "mean_score": 0.895069440205892,
+      "failure_rate": 0.0,
+      "ece": 0.0,
+      "by_corruption": {
+        "snr_db": {
+          "0.0": {
+            "examples": 1,
+            "mean_score": 0.8090792894363403,
+            "failure_rate": 0.0
+          },
+          "10.0": {
+            "examples": 1,
+            "mean_score": 0.8761290311813354,
+            "failure_rate": 0.0
+          },
+          "100.0": {
+            "examples": 1,
+            "mean_score": 1.0,
+            "failure_rate": 0.0
+          }
+        }
+      }
+    },
+    "event_consistency": {
+      "examples": 3,
+      "mean_score": 0.4666666666666666,
+      "failure_rate": 0.0,
+      "ece": 0.16821365753809606,
+      "by_corruption": {
+        "snr_db": {
+          "0.0": {
+            "examples": 1,
+            "mean_score": 0.20000000000000004,
+            "failure_rate": 0.0
+          },
+          "10.0": {
+            "examples": 1,
+            "mean_score": 0.20000000000000004,
+            "failure_rate": 0.0
+          },
+          "100.0": {
+            "examples": 1,
+            "mean_score": 1.0,
+            "failure_rate": 0.0
+          }
+        }
+      }
+    }
+  }
+}
