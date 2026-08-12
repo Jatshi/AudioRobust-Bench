@@ -17,3 +17,5 @@ __all__ = [
     "TaskPrediction",
     "build_corruption_manifest",
 ]
+
+__version__ = "3.0.0"

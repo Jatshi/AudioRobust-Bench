@@ -1,6 +1,6 @@
 [project]
 name = "audio-robust-bench"
-version = "2.0.0"
+version = "3.0.0"
 description = "Unified reliability benchmark for ASR, speaker cloning, and sound event detection."
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.26,<3"]

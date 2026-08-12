@@ -1,13 +1,15 @@
-# AudioRobust-Bench 2.0
+# AudioRobust-Bench 3.0
 
+[![Release](https://img.shields.io/badge/release-v3.0.0-7C3AED)](https://github.com/Jatshi/AudioRobust-Bench/releases/tag/v3.0.0)
+[![CI](https://github.com/Jatshi/AudioRobust-Bench/actions/workflows/ci.yml/badge.svg)](https://github.com/Jatshi/AudioRobust-Bench/actions/workflows/ci.yml)
 [![GPU](https://img.shields.io/badge/validated-RTX%204090-76B900)](artifacts/smoke/run_manifest.json)
 [![Models](https://img.shields.io/badge/real%20models-Whisper%20%7C%20WavLM%20%7C%20AST-7C3AED)](artifacts/smoke/run_manifest.json)
 [![Tests](https://img.shields.io/badge/GPU%20smoke-5%20passed-0F766E)](tests)
 [![License](https://img.shields.io/badge/code-Apache--2.0-2563EB)](LICENSE)
 
-[2.0 upgrade & learning guide](docs/V2_UPGRADE_AND_LEARNING_ZH.md) · [measured manifest](artifacts/smoke/run_manifest.json) · [project plan](PROJECT_PLAN.md)
+[3.0 新增内容](docs/V3_RELEASE_NOTES_ZH.md) · [3.0 学习与踩坑手册](docs/V3_LEARNING_AND_INTERVIEW_ZH.md) · [2.0 升级与学习复盘](docs/V2_UPGRADE_AND_LEARNING_ZH.md) · [measured manifest](artifacts/smoke/run_manifest.json) · [project plan](PROJECT_PLAN.md)
 
-![AudioRobust-Bench 2.0 measured degradation curves](assets/audio_robust_v2_demo.gif)
+![AudioRobust-Bench 3.0 measured degradation curves](assets/audio_robust_v2_demo.gif)
 
 **One corruption manifest, three audio tasks, one reliability report.**
 
@@ -19,6 +21,12 @@ incomparable demo-specific robustness stories with one deterministic protocol.
 > Status: the deterministic CPU contract and a real-model RTX 4090 smoke sweep are
 > validated. The published three-SNR result is an engineering smoke test, not a
 > corpus-level accuracy claim.
+
+3.0 formalizes the measured 2.0 prototype as a version-aligned, auditable release:
+package metadata, runtime version, README, machine-readable evidence, release notes and
+the interview-oriented learning guide now share one public contract. It does not claim
+new upstream model training. See [what changed](docs/V3_RELEASE_NOTES_ZH.md) and the
+[deep learning/pitfall guide](docs/V3_LEARNING_AND_INTERVIEW_ZH.md).
 
 ## Verified RTX 4090 smoke
 
